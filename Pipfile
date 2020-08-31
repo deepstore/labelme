@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 labelme = {editable = true, path = "."}
 pycocotools = "*"
+pyqt5 = "*"
 
 [requires]
 python_version = "3.8"
