@@ -253,3 +253,39 @@ If you use this project in your research or wish to refer to the baseline result
   year =         {2016}
 }
 ```
+
+## Instance Segmentation
+
+Generate MS COCO Annotate Data by labelme
+
+```sh
+$ git clone https://github.com/mgoldchild/labelme.git
+$ cd labelme
+$ pipenv install -e . # pipでやると、globalの起きる問題が発生したため、virtualenvを使う
+$ pipenv shell # or これを使う
+$ pipenv install
+```
+
+Create a labels.txt
+
+```sh
+$ cat labels.txt
+__ignore__
+ball
+```
+
+Launch the app
+
+```sh
+$ labelme train_dataset_labelme --labels ../labels.txt
+```
+
+Convert format to COCO
+
+```sh
+$ cd labelme/examplts/instance_segmentation
+$ IN=/home/mike/Workspace/xxx_xxx/train_dataset_labelme
+$ OUT=/home/mike/Workspace/xxx_xxx/train_dataset_coco
+$ LABEL=/home/mike/Workspace/xxx_xxx/labels.txt
+$ python labelme2coco.py $IN $OUT --labels $LABEL
+```
