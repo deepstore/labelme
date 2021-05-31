@@ -9,6 +9,7 @@ verify_ssl = true
 labelme = {editable = true, path = "."}
 pycocotools = "*"
 pyqt5 = "*"
+opencv-python-headless = "*"
 
 [requires]
 python_version = "3.8"
